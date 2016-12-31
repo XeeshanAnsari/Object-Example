@@ -18,7 +18,14 @@ function signUp() {
         }
         users.push(newUser);
         console.log(users);
+        localStorage.setItem("UserData", users);
     }
 
 
+}
+
+
+function signIn() {
+    var usersData = localStorage.getItem(users);
+    console.log(usersData);
 }

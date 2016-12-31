@@ -4,17 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Assignment</title>
+    <style>
+        #form {
+            width: 50%;
+            margin: 50px auto;
+            padding: 5%;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <div>
-        <label for="usserName">User Name<input type="text" id="userName" name="" value=""> </label>
-        <label for="usserName">User Password<input type="password" id="userPass" name="" value=""> </label>
-        <input type="submit" onclick="signUp();" id="submit" name="submit" value="submit">
-    </div>
-    <div>
+    <div id="form">
+        <label for="userName">User Name <input type="text" id="userName" name="" value=""> </label><br><br>
+        <label for="userName"> Password <input type="password" id="userPass" name="" value=""> </label><br><br>
+        <input type="submit" onclick="signUp();" id="submit" name="Sign Up" value="Sign Up">
+        <button type="submit" onclick="signIn();">Sign In</button>
         <h1 id="text"></h1>
     </div>
+
     <script src="app.js"></script>
 </body>
 
