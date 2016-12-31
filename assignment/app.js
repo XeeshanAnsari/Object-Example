@@ -17,8 +17,8 @@ function signUp() {
             password: userPass
         }
         users.push(newUser);
-        console.log(users);
-        localStorage.setItem("UserData", users);
+        console.log(JSON.stringify(users));
+        localStorage.setItem("userData", JSON.stringify(users));
     }
 
 
@@ -26,6 +26,28 @@ function signUp() {
 
 
 function signIn() {
-    var usersData = localStorage.getItem(users);
-    console.log(usersData);
+    var usersData = localStorage.getItem("userData");
+    console.log(JSON.parse(usersData));
+
+
+}
+
+
+function logIn() {
+    var userNameLogin = document.getElementById("userNameLogin").value;
+    var userPassLogin = document.getElementById("userPassLogin").value;
+    var msgLogin = document.getElementById("loginText");
+    var usersData = localStorage.getItem("userData");
+    var finalData = JSON.parse(usersData);
+
+    for (var i = 0; i < finalData.length; i++) {
+        var name = finalData.userName;
+        var pass = finalData.userPass;
+        if (userNameLogin == name && userPassLogin == pass) {
+            msgLogin.innerHTML = "Login Is success";
+        }
+
+
+
+    }
 }
